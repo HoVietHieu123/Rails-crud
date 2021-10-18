@@ -1,0 +1,17 @@
+#content-wrapper {
+  .card-header__customs {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .user_form_gender {
+    .form-check-inline {
+      input, label {
+        cursor: pointer;
+      }
+    }
+  }
+  .image-rounded {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

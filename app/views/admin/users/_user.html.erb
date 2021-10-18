@@ -1,0 +1,20 @@
+<tr class="odd">
+  <td>
+    <% if user.avatar? %>
+      <%= image_tag user.avatar_url, size: "150", class: "image-rounded" %>
+    <% else %>
+      <% if user.male? %>
+        <%= image_tag "undraw_profile_2", size: "150", class: "image-rounded"  %>
+      <% else %>
+        <%= image_tag "undraw_profile_3", size: "150", class: "image-rounded" %>
+      <% end %>
+    <% end %>
+  </td>
+  <td><%= user.full_name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.phone %></td>
+  <td><%= user.address %></td>
+  <td><%= user.birthday.strftime("%d-%m-%Y") %></td>
+  <td><%= user.gender %></td>
+  <td></td>
+</tr>

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <%= simple_form_for @user_form, url: admin_users_path do |f| %>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <%= f.input :full_name, label_html: { class: "form-label" }, input_html: { class: "form-control" },
+              error: handle_error(f.error(:full_name), "Full Name") %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= f.input :email, label: "Email address", placeholder: "user@example.com", label_html: { class: "form-label" }, 
+              input_html: { class: "form-control" } %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= f.input :phone, label: "Phone number", placeholder: "0123456789", label_html: { class: "form-label" }, 
+              input_html: { class: "form-control" } %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= f.input :address, label: "Address", label_html: { class: "form-label" }, 
+              input_html: { class: "form-control" } %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= f.input :birthday, label: "Birthday", placeholder: "dd/mm/yyyy", 
+              label_html: { class: "form-label" }, input_html: { class: "form-control" } %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= f.input :avatar, label: "Avatar", as: :file, label_html: { class: "form-label" }, 
+              input_html: { class: "form-control", accept: ("image/png, image/jpg, image/jpeg") } %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']],
+              label_method: :second, value_method: :first, wrapper: :vertical_collection_inline %>
+          </div>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Create", class: "btn btn-primary w-25" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
